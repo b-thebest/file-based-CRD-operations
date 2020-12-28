@@ -9,9 +9,11 @@ from operations.operation_functions import CRD
 # Adding command line arguments to check file path
 parser = ArgumentParser()
 parser.add_argument('--path', help='Enter the absolute path of file', default=DATA_PATH)
+parser.add_argument('--threaded', help='True will be running this process in threaded mode, default set to False', default=False)
 args = parser.parse_args()
 
 file_path = args.path
+is_thread = args.threaded
 
 #Directory creation in case of not exist
 successful_creation = director(file_path).create_folder()
@@ -31,7 +33,7 @@ def create_route():
             {"status": "error", "message": "Incorrect request format: Only JSON allowed"}), 400
 
     ##Creating new entry for the request data
-    valid, response_message = CRD(file_path).create(request_data)
+    valid, response_message = CRD(file_path, threaded=is_thread).create(request_data)
     if not valid:
         return jsonify({"status": "error", "message": response_message}), 400
 

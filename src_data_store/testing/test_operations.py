@@ -22,17 +22,17 @@ if not successful_creation:
     exit(0)
 
 class test_create:
-    def __init__(self, file_path, threaded):
+    def __init__(self, file_path, threaded=False):
         self.file_path = file_path
         self.threaded = threaded
 
-    def start_test(self, data, threaded=False):
+    def start_test(self, data):
         if not isinstance(data, dict):
             print("Incorrect data format: Only JSON allowed")
             return False
 
         ##Creating new entry for the request data
-        valid, response_message = CRD(self.file_path, threaded=threaded).create(data)
+        valid, response_message = CRD(self.file_path, threaded=self.threaded).create(data)
         if not valid:
             print(response_message)
             return False
@@ -40,20 +40,20 @@ class test_create:
         print(response_message)
         return True
 
-    def start(self, custom_data=None, custom_file=None, threaded=False):
+    def start(self, custom_data=None, custom_file=None):
         if custom_data:
-            return self.start_test(custom_data, threaded)
+            return self.start_test(custom_data)
 
         elif custom_file:
             if not path.isfile(custom_file):
                 print(custom_file + " not found")
                 return False
             data_file = json.dumps(open(custom_file))
-            return self.start_test(data_file, threaded)
+            return self.start_test(data_file)
 
         else:
             data_file = json.dumps(open('create_test_cases.json'))
-            return self.start_test(data_file, threaded)
+            return self.start_test(data_file)
 
 class test_read:
     def __init__(self, file_path):
