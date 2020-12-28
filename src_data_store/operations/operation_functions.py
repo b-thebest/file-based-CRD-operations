@@ -4,7 +4,7 @@ import threading
 from os import path
 from datetime import datetime, timedelta
 from dateutil.parser import parse
-from configurations.db_config import DATA_FILE_NAME, OVERWRITE_TTL
+from src_data_store.configurations.db_config import DATA_FILE_NAME, OVERWRITE_TTL
 from sys import getsizeof
 import fcntl
 from time import time
@@ -88,10 +88,10 @@ class CRD:
                     data_to_write[key] = row
 
             n_threads = 4 #Number of threads permissible
-            json_keys = req_data.keys()
+            json_keys = list(req_data.keys())
             batch_size = len(json_keys) // n_threads
             active_threads = []
-            for i in n_threads:
+            for i in range(n_threads):
                 firstIndex = i * batch_size
                 lastIndex = (i+1) * batch_size if (i+1) < n_threads else None
                 active_threads.append(threading.Thread(target=thread_write, args=(json_keys[firstIndex:lastIndex],), name = "thread" + str(i)))
