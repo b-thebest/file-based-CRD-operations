@@ -33,10 +33,10 @@ To give more flexibility, some configurations added which can be modified as per
 
 There are two configuration files can be found [here](https://github.com/b-thebest/file-based-CRD-operations/tree/main/src_data_store/configurations)
 
-api_settings.py contains informations about host, port and debugging
-db_config.py contains setttings related to database.
+**api_settings.py** contains informations about host, port and debugging
+**db_config.py** contains setttings related to database.
 
-NOTE: If you set *OVERWRITE_TTL* to *True* in [db_config.py](https://github.com/b-thebest/file-based-CRD-operations/blob/main/src_data_store/configurations/db_config.py) then it will start overwriting expired items too.
+#### NOTE: If you set *OVERWRITE_TTL* to *True* in [db_config.py](https://github.com/b-thebest/file-based-CRD-operations/blob/main/src_data_store/configurations/db_config.py) then it will start overwriting expired items too.
 
 
 # Test Setup
@@ -69,12 +69,7 @@ NOTE: file should be in JSON format. reference can be taken from [test files](ht
 *example*
 ```
 from testing.test_operations import test_read, test_create, test_delete
-data = {
-  "someKey": {
-    "attr1": "Some Name",
-    "attr2": "Some Other Name"
-  }
-}
+
 test_create().start(custom_file="path/to/your/testcases/file")
 test_read().start(custom_file="path/to/your/testcases/file")
 test_delete().start(custom_file="path/to/your/testcases/file")
