@@ -1,3 +1,5 @@
+'__author__: b-thebest (Burhanuddin Kamlapurwala)'
+
 import flask
 from flask import request, jsonify
 from argparse import ArgumentParser
@@ -67,4 +69,4 @@ def delete_route():
     return jsonify({"status": "success", "message": response_message}), 200
 
 if __name__ == "__main__":
-    app.run(host=HOST, port=PORT)
+    app.run(host=HOST, port=PORT, threaded=True)

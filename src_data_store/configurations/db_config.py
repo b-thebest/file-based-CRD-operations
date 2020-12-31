@@ -1,3 +1,5 @@
+'__author__: b-thebest (Burhanuddin Kamlapurwala)'
+
 #Default directory to keep data files
 DATA_PATH = "data/"
 

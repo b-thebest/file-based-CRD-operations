@@ -14,5 +14,17 @@
       "name": "burhan",
       "Time-To-Live": 60,
       "dead_time": 1609171823
+   },
+   "demo": {
+      "name": "John",
+      "city": "Seattle"
+   },
+   "sample1": {
+      "name": "Alan"
+   },
+   "sample3": {
+      "name": "Eric",
+      "Time-To-Live": 60,
+      "dead_time": 1609323092
    }
 }

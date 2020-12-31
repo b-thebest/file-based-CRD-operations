@@ -1,3 +1,5 @@
+'__author__: b-thebest (Burhanuddin Kamlapurwala)'
+
 from os import path, makedirs, stat
 
 class directory:
