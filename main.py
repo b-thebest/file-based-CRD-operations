@@ -52,6 +52,7 @@ print(CRD().delete("demo3"))
 #Check if it can deny delete request for key which does not exist
 print(CRD().delete("notExistingKey"))
 
+'''
 ##With threading
 import threading
 
@@ -69,4 +70,4 @@ for thread in threads:
 
 for thread in threads:
     thread.join()
-
+'''
