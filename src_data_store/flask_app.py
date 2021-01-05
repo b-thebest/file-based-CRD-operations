@@ -1,6 +1,5 @@
 '__author__: b-thebest (Burhanuddin Kamlapurwala)'
 
-import flask
 from flask import request, jsonify
 from argparse import ArgumentParser
 from configurations.api_settings import DEBUG, HOST, PORT
