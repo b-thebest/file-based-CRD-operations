@@ -24,15 +24,7 @@ Result samples can be found at location https://github.com/b-thebest/file-based-
       python3 -m pip install -r requirements.txt
   4.Run the project
   
-<<<<<<< HEAD
       a. run python3 flask_app.py (Default database will be selected for operations)
-=======
-<<<<<<< HEAD
-      a. run python3 flask_app.py Default database will be selected for operations
-=======
-      a. run python3 flask_app.py (Default database will be selected for operations)
->>>>>>> d8b12be5af7dd72aca35ccdfd0fbc7afcd946cb3
->>>>>>> 0760cfd09557324a84dfea77f26d04f3f248c1f8
       b. run python3 flask_app.py --path "path/to/your/file/or/database"
 
 
@@ -42,14 +34,7 @@ To give more flexibility, some configurations added which can be modified as per
 There are two configuration files can be found [here](https://github.com/b-thebest/file-based-CRD-operations/tree/main/src_data_store/configurations)
 
 **api_settings.py** contains informations about host, port and debugging
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> d8b12be5af7dd72aca35ccdfd0fbc7afcd946cb3
->>>>>>> 0760cfd09557324a84dfea77f26d04f3f248c1f8
 **db_config.py** contains setttings related to database.
 
 #### NOTE: If you set *OVERWRITE_TTL* to *True* in [db_config.py](https://github.com/b-thebest/file-based-CRD-operations/blob/main/src_data_store/configurations/db_config.py) then it will start overwriting expired items too.
@@ -59,14 +44,7 @@ There are two configuration files can be found [here](https://github.com/b-thebe
 *test.py* file is created under src_data_store to run basic test cases on test_db.json
 
 To run basic test cases, run following command:
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> d8b12be5af7dd72aca35ccdfd0fbc7afcd946cb3
->>>>>>> 0760cfd09557324a84dfea77f26d04f3f248c1f8
 ```python3 test.py```
 
 NOTE by default this file runs on basic test cases created in following files which can be modified by user
@@ -89,23 +67,10 @@ test_read().start(custom_key="someKey")
 test_delete().start(custom_key="someKey")
 ```
 2. Use JSON file to do your task simply
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-NOTE: file should be in JSON format. reference can be taken from [test files](https://github.com/b-thebest/file-based-CRD-operations/tree/main/src_data_store/testing)
-*example*
-```
-from testing.test_operations import test_read, test_create, test_delete
-=======
->>>>>>> 0760cfd09557324a84dfea77f26d04f3f248c1f8
 
 NOTE: file should be in JSON and proper format. reference can be taken from [test files](https://github.com/b-thebest/file-based-CRD-operations/tree/main/src_data_store/testing)
 *example*
 ```rt test_read, test_create, test_delete
-<<<<<<< HEAD
-=======
->>>>>>> d8b12be5af7dd72aca35ccdfd0fbc7afcd946cb3
->>>>>>> 0760cfd09557324a84dfea77f26d04f3f248c1f8
 
 test_create().start(custom_file="path/to/your/testcases/file")
 test_read().start(custom_file="path/to/your/testcases/file")
@@ -114,17 +79,8 @@ test_delete().start(custom_file="path/to/your/testcases/file")
 
 
 # Accessing data store as a module
-<<<<<<< HEAD
 This feature allows to import datastore into your file and use operations as you need. 
 **main.py** contains the sample operations for reference
-=======
-<<<<<<< HEAD
-This feature allows to import datastore into your file and use operations as you need. **main.py** contains the sample operations for reference
-=======
-This feature allows to import datastore into your file and use operations as you need. 
-**main.py** contains the sample operations for reference
->>>>>>> d8b12be5af7dd72aca35ccdfd0fbc7afcd946cb3
->>>>>>> 0760cfd09557324a84dfea77f26d04f3f248c1f8
 ```
 from src_data_store.operations.operation_functions import CRD
 
@@ -148,14 +104,7 @@ print(CRD(file_path).delete("demo2"))
 
 # REST API examples
 **Create**
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> d8b12be5af7dd72aca35ccdfd0fbc7afcd946cb3
->>>>>>> 0760cfd09557324a84dfea77f26d04f3f248c1f8
   url/endpoint -- http://localhost:7000/datastore/create
   
   body (type:JSON) -- 
@@ -179,14 +128,7 @@ print(CRD(file_path).delete("demo2"))
   4. No spaces and special characters in key
   
 **Read**
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> d8b12be5af7dd72aca35ccdfd0fbc7afcd946cb3
->>>>>>> 0760cfd09557324a84dfea77f26d04f3f248c1f8
   url/endpoint -- http://localhost:7000/datastore/read
   
   params
@@ -194,14 +136,7 @@ print(CRD(file_path).delete("demo2"))
     key: It should not contain special characters and spaces and should not exceed 32 characters
     
 **Delete**
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> d8b12be5af7dd72aca35ccdfd0fbc7afcd946cb3
->>>>>>> 0760cfd09557324a84dfea77f26d04f3f248c1f8
   url/endpoint -- http://localhost:7000/datastore/delete
   
   params
